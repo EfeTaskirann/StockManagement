@@ -1,20 +1,26 @@
-﻿@using EntityLayer.Concrete;    
+﻿@using EntityLayer.Concrete
 @model List<Category>
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<!DOCTYPE html>
-<html>
-
-    <head>
-    <title>Category</title>
-    </head>
-    <body>  
-        <h1>asasd</h1>
-
-    </body>
-</html>
+<link href="~/css/site.css" rel="stylesheet" />
 
 
-
+<table class="tal">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Category Status</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Category_id</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Category_status</td>
+            <td><a href="#" class="btn btn-warning"></a>Details </td>
+            <td><a href="#" class="btn btn-danger"></a>Delete </td>
+        </tr>
+    }
+</table>
