@@ -12,10 +12,10 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int User_id { get; set; }
-        public string? F_name { get; set; }
-        public string? L_name { get; set; }
-        public string? Username { get; set; }
-        public string? Password { get; set; }
+        public string F_name { get; set; }
+        public string L_name { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         public string? Mail { get; set; }
         public bool Is_active { get; set; }
     }

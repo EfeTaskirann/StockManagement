@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace NewProject.Controllers
 {
@@ -12,5 +14,68 @@ namespace NewProject.Controllers
             var values = cm.ListAllCategory;
             return View(values);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var category = cm.GetById(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                cm.UpdateCategory(category);
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                cm.AddCategory(category);
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var category = cm.GetById(id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var category = cm.GetById(id);
+            if (category != null)
+            {
+                cm.DeleteCategory(category);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
+

@@ -13,11 +13,7 @@ namespace DataAccessLayer.EntityFramework
     public class EfRepositoryUser : GenericRepository<User,Context>, IUserDal
     {
         Context c = new Context();
-        public void Delete(User t)
-        {
-            
-        }
-
+     
         public User GetById(int id)
         {
             return c.Users.Find(id);
@@ -29,14 +25,5 @@ namespace DataAccessLayer.EntityFramework
             return c.Users.ToList();
         }
 
-        public void insert(User t)
-        {
-            
-        }
-
-        public void Update(User t)
-        {
-            
-        }
     }
 }

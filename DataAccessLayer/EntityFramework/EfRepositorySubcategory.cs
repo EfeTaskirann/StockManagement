@@ -13,11 +13,7 @@ namespace DataAccessLayer.EntityFramework
     public class EfRepositorySubcategory : GenericRepository<Subcategory,Context>, ISubCategoryDal
     {
         Context c = new Context();
-        public void Delete(Subcategory t)
-        {
-            
-        }
-
+       
         public Subcategory GetById(int id)
         {
            return c.Subcategories.Find(id);
@@ -29,14 +25,6 @@ namespace DataAccessLayer.EntityFramework
             return c.Subcategories.ToList();
         }
 
-        public void insert(Subcategory t)
-        {
-           
-        }
-
-        public void Update(Subcategory t)
-        {
-            
-        }
+      
     }
 }

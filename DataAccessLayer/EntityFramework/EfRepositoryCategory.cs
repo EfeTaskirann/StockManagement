@@ -13,10 +13,6 @@ namespace DataAccessLayer.EntityFramework
     public class EfRepositoryCategory : GenericRepository<Category,Context>, ICategoryDal
     {
         Context c = new Context();
-        public void Delete(Category t)
-        {
-          
-        }
 
         public Category GetById(int id)
         {
@@ -29,12 +25,8 @@ namespace DataAccessLayer.EntityFramework
             return c.Categories.ToList();
         }
 
-        public void insert(Category t)
-        {
-        }
+        
 
-        public void Update(Category t)
-        {
-        }
+        
     }
 }

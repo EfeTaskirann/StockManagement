@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<h2>Add User</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="F_name"></label>
+        <input asp-for="F_name" class="form-control" />
+        <span asp-validation-for="F_name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="L_name"></label>
+        <input asp-for="L_name" class="form-control" />
+        <span asp-validation-for="L_name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mail"></label>
+        <input asp-for="Mail" class="form-control" />
+        <span asp-validation-for="Mail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Is_active"></label>
+        <input asp-for="Is_active" class="form-control" />
+        <span asp-validation-for="Is_active" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

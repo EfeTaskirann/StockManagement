@@ -11,11 +11,11 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ProductId { get; set; }
-        public string? ProductName { get; set; }
+        public string ProductName { get; set; }
         public int ProductPrice { get; set; }
         public int ProductStock { get; set; }
-        public string ProductImage { get; set; }
-        public string? ProductDescription { get; set; }
+        public string? ProductImage { get; set; }
+        public string ProductDescription { get; set; }
         public bool ProductStatus { get; set; }
 
         public int Subcategory_id { get; set; }

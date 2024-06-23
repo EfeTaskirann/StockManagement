@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -37,3 +38,9 @@ namespace BusinessLayer.Concrete
         public List<Subcategory> ListAllSubcategory => _subcategoryDal.GetListAll();
     }
 }
+
+  
+   
+
+
+   

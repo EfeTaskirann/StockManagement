@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concrete
+@model List<Product>
+@{
+    Layout = null;
+}
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+
+<a asp-action="Add" class="btn btn-success">Add Product</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Stock</th>
+        <th>Product Image</th>
+        <th>Product Description </th>
+        <th>Product Status</th>
+        <th>Details</th>
+        <th>Delete</th>
+        <th>Edit</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductPrice</td>
+            <td>@item.ProductStock</td>
+            <td>@item.ProductImage</td>
+            <td>@item.ProductDescription</td>
+            <td>@item.ProductStatus</td>
+            <td><a href="#" class="btn btn-warning">Details</a> </td>
+            <td><a href="#" class="btn btn-danger">Delete</a> </td>
+            <td><a href="#" class="btn btn-warning">Edit</a> </td>
+        </tr>
+    }
+</table>
