@@ -796,8 +796,9 @@ to get the desired effect
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
+            @RenderBody()
             <!-- /.content-header -->
-            <!-- Main content -->
+           @*  <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -805,7 +806,7 @@ to get the desired effect
                             <div class="card">
                                 <div class="card-header border-0">
                                     <div class="d-flex justify-content-between">
-                                        <h3 class="card-title">Online Store Visitors</h3>
+                                        <h3 class="card-title">Online Store Visitors333333333333333333333333</h3>
                                         <a href="javascript:void(0);">View Report</a>
                                     </div>
                                 </div>
@@ -838,10 +839,10 @@ to get the desired effect
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> *@
                             <!-- /.card -->
 
-                            <div class="card">
+                            @* <div class="card">
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Products</h3>
                                     <div class="card-tools">
@@ -945,10 +946,10 @@ to get the desired effect
                                     </table>
                                 </div>
                             </div>
-                            <!-- /.card -->
+                            <!-- /.card --> *@
                         </div>
                         <!-- /.col-md-6 -->
-                        <div class="col-lg-6">
+                       @*  <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-header border-0">
                                     <div class="d-flex justify-content-between">
@@ -985,8 +986,8 @@ to get the desired effect
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /.card -->
+                            </div> *@
+                            @* <!-- /.card -->
 
                             <div class="card">
                                 <div class="card-header border-0">
@@ -1035,7 +1036,7 @@ to get the desired effect
                                             </span>
                                             <span class="text-muted">REGISTRATION RATE</span>
                                         </p>
-                                    </div>
+                                    </div> *@
                                     <!-- /.d-flex -->
                                 </div>
                             </div>
@@ -1076,6 +1077,8 @@ to get the desired effect
     <script src="~/plugins/chart.js/Chart.min.js"></script>
     <script src="~/dist/js/demo.js"></script>
     <script src="~/dist/js/pages/dashboard3.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>
-@RenderBody()

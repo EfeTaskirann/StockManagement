@@ -1,12 +1,14 @@
 ﻿@model EntityLayer.Concrete.Category
 
 @{
+    ViewData["Title"] = "Index";
     ViewData["Title"] = "Add Category";
 }
 
 <h2>Add Category</h2>
 
 <form asp-action="Add" method="post">
+
     <div class="form-group">
         <label asp-for="CategoryName"></label>
         <input asp-for="CategoryName" class="form-control" />
@@ -19,8 +21,4 @@
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+

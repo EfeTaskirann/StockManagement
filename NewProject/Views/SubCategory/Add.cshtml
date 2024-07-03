@@ -1,6 +1,8 @@
 ﻿@model EntityLayer.Concrete.Subcategory
 
 @{
+    ViewData["Title"] = "Index";
+
     ViewData["Title"] = "Add Subcategory";
 }
 
@@ -23,8 +25,3 @@
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
