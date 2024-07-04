@@ -31,12 +31,14 @@ namespace BusinessLayer.Concrete
 
         public Category GetById(int id) => _categoryDal.GetById(id);
 
-        public List<Category> ListAllCategory => _categoryDal.GetListAll();
+       
 
         public void UpdateCategory(Category category)
         {
             _categoryDal.Update(category);
         }
+
+        public List<Category> ListAllCategory => _categoryDal.GetListAll();
     }
 }
   

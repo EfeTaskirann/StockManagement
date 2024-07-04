@@ -38,11 +38,11 @@
         <input asp-for="ProductStatus" class="form-control" />
         <span asp-validation-for="ProductStatus" class="text-danger"></span>
     </div>
-    @* <div class="form-group">
+    <div class="form-group">
         <label asp-for="Subcategory_id"></label>
         <select asp-for="Subcategory_id" class="form-control" asp-items="ViewBag.Subcategories"></select>
         <span asp-validation-for="Subcategory_id" class="text-danger"></span>
-    </div> *@
+    </div>
     <button type="submit" class="btn btn-primary">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>

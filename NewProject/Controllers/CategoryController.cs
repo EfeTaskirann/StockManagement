@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace NewProject.Controllers
@@ -40,6 +42,7 @@ namespace NewProject.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+
             return View();
         }
 

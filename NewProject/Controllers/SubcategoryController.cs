@@ -2,12 +2,16 @@
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace StockMANAGEMENT.Controllers
 {
     public class SubcategoryController : Controller
     {
+
         SubcategoryManager sc = new SubcategoryManager(new EfRepositorySubcategory());
+        CategoryManager categoryM = new CategoryManager(new EfRepositoryCategory());
+
 
         public IActionResult Index()
         {
@@ -18,6 +22,7 @@ namespace StockMANAGEMENT.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name");
             return View();
         }
 
@@ -29,6 +34,7 @@ namespace StockMANAGEMENT.Controllers
                 sc.AddSubcategory(subcategory);
                 return RedirectToAction("Index");
             }
+            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
             return View(subcategory);
         }
 
@@ -40,6 +46,7 @@ namespace StockMANAGEMENT.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
             return View(subcategory);
         }
 
@@ -51,6 +58,7 @@ namespace StockMANAGEMENT.Controllers
                 sc.UpdateSubcategory(subcategory);
                 return RedirectToAction("Index");
             }
+            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
             return View(subcategory);
         }
 

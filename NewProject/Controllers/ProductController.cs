@@ -82,17 +82,5 @@ public class ProductController : Controller
         return RedirectToAction("Index");
     }
 
-    //private SelectList GetSubcategoriesSelectList()
-    //{
-    //    // Burada alt kategorileri SelectList olarak döndürebilirsiniz
-    //    // Örnek olarak, alt kategorileri veritabanından çekerek veya elle ekleyerek yapabilirsiniz
-    //    return new SelectList(new List<SelectListItem>
-    //    {
-    //        new SelectListItem { Value = "1", Text = "Subcategory 1" },
-    //        new SelectListItem { Value = "2", Text = "Subcategory 2" },
-    //        new SelectListItem { Value = "3", Text = "Subcategory 3" },
-    //    }, "Value", "Text");
-    //}
-
 }
 

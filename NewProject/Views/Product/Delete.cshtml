@@ -28,9 +28,9 @@
 
         <dt>@Html.DisplayNameFor(model => model.ProductStatus)</dt>
         <dd>@Html.DisplayFor(model => model.ProductStatus)</dd>
-@* 
+
         <dt>@Html.DisplayNameFor(model => model.Subcategory_id)</dt>
-        <dd>@Html.DisplayFor(model => model.Subcategory_id)</dd> *@
+        <dd>@Html.DisplayFor(model => model.Subcategory_id)</dd>
     </dl>
 
 
@@ -41,8 +41,3 @@
     </form>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
