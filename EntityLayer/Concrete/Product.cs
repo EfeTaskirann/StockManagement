@@ -14,12 +14,14 @@ namespace EntityLayer.Concrete
         public string ProductName { get; set; }
         public int ProductPrice { get; set; }
         public int ProductStock { get; set; }
-        public string? ProductImage { get; set; }
         public string ProductDescription { get; set; }
         public bool ProductStatus { get; set; }
 
+
         public int Subcategory_id { get; set; }
         public Subcategory? Subcategory { get; set; }
+        public Guid ProductImageId { get; set; }
+        public ProductImage? ProductImage { get; set; }
 
 
 

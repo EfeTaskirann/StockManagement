@@ -13,8 +13,7 @@ namespace BusinessLayer.Abstract
         void DeleteSubcategory(Subcategory subcategory);
         void UpdateSubcategory(Subcategory subcategory);
 
-        List<Subcategory> ListAllSubcategory { get; }
-
+        List<Subcategory> GetListAllSubcategory();
         Subcategory GetById(int id);    
     }
 }

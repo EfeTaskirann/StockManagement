@@ -21,7 +21,8 @@
     </div>
     <div class="form-group">
         <label asp-for="Category_id"></label>
-        <input asp-for="Category_id" class="form-control" />
+        <select asp-for="Category_id" class="form-control" asp-items="ViewBag.Categories"></select>
+        <span asp-validation-for="Category_id" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>

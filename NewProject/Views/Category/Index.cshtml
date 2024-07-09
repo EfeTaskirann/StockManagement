@@ -14,7 +14,6 @@
     <tr>
         <th>Category Name</th> 
         <th>Category Status</th>
-        <th>Details</th>
         <th>Delete</th>
         <th>edit</th>
     </tr>
@@ -23,9 +22,6 @@
         <tr>
             <td>@item.CategoryName</td>
             <td>@item.Category_status</td>
-
-
-            <td><a href="#" class="btn btn-warning">Details</a> </td>
             <td><a href="/Category/Delete/@item.Category_id" class="btn btn-danger">Delete</a> </td>
             <td><a href="/Category/edit/@item.Category_id" class="btn btn-warning">Edit</a> </td>
         </tr>

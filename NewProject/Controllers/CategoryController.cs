@@ -13,7 +13,7 @@ namespace NewProject.Controllers
         CategoryManager cm = new CategoryManager(new EfRepositoryCategory());
         public IActionResult Index()
         {
-            var values = cm.ListAllCategory;
+            var values = cm.GetListAllCategory();
             return View(values);
         }
 

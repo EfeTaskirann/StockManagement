@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,12 @@ namespace BusinessLayer.Concrete
 
         public Subcategory GetById(int id) => _subcategoryDal.GetById(id);
 
-        public List<Subcategory> ListAllSubcategory => _subcategoryDal.GetListAll();
+        
+
+        public List<Subcategory> GetListAllSubcategory()
+        {
+            return _subcategoryDal.GetListAll();
+        }
     }
 }
 

@@ -18,11 +18,14 @@ public class ProductController : Controller
         return View(values);
     }
     [HttpGet]
-    public IActionResult Add()
-    {
-        ViewBag.Subcategories = new SelectList(subCategoryM.ListAllSubcategory, "Subcategory_id", "Subcategory_name");
-        return View();
-    }
+public IActionResult Add()
+{
+ 
+    ViewBag.Subcategories = new SelectList(subCategoryM.GetListAllSubcategory(), "Subcategory_id", "Subcategory_name");
+
+    return View();
+}
+
 
     [HttpPost]
     public IActionResult Add(Product product)
@@ -32,7 +35,7 @@ public class ProductController : Controller
             pm.AddProduct(product);
             return RedirectToAction("Index");
         }
-        ViewBag.Subcategories = new SelectList(subCategoryM.ListAllSubcategory, "Subcategory_id", "Subcategory_name", product.Subcategory_id);
+        ViewBag.Subcategories = new SelectList(subCategoryM.GetListAllSubcategory(), "Subcategory_id", "Subcategory_name", product.Subcategory_id);
         return View(product);
     }
 
@@ -44,7 +47,7 @@ public class ProductController : Controller
         {
             return NotFound();
         }
-        ViewBag.Subcategories = new SelectList(subCategoryM.ListAllSubcategory, "Subcategory_id", "Subcategory_name", product.Subcategory_id);
+        ViewBag.Subcategories = new SelectList(subCategoryM.GetListAllSubcategory(), "Subcategory_id", "Subcategory_name", product.Subcategory_id);
         return View(product);
     }
 
@@ -56,7 +59,7 @@ public class ProductController : Controller
             pm.UpdateProduct(product);
             return RedirectToAction("Index");
         }
-        ViewBag.Subcategories = new SelectList(subCategoryM.ListAllSubcategory, "Subcategory_id", "Subcategory_name", product.Subcategory_id);
+        ViewBag.Subcategories = new SelectList(subCategoryM.GetListAllSubcategory(), "Subcategory_id", "Subcategory_name", product.Subcategory_id);
         return View(product);
     }
 

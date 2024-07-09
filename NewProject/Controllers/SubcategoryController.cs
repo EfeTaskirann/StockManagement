@@ -10,19 +10,20 @@ namespace StockMANAGEMENT.Controllers
     {
 
         SubcategoryManager sc = new SubcategoryManager(new EfRepositorySubcategory());
-        CategoryManager categoryM = new CategoryManager(new EfRepositoryCategory());
+        CategoryManager cm = new CategoryManager(new EfRepositoryCategory());
 
 
         public IActionResult Index()
         {
-           var values = sc.ListAllSubcategory;
+           var values = sc.GetListAllSubcategory();
             return View(values);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name");
+            ViewBag.Categories = new SelectList(cm.GetListAllCategory(), "Category_id", "CategoryName");
+
             return View();
         }
 
@@ -34,7 +35,7 @@ namespace StockMANAGEMENT.Controllers
                 sc.AddSubcategory(subcategory);
                 return RedirectToAction("Index");
             }
-            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
+            
             return View(subcategory);
         }
 
@@ -46,7 +47,8 @@ namespace StockMANAGEMENT.Controllers
             {
                 return NotFound();
             }
-            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
+            ViewBag.Categories = new SelectList(cm.GetListAllCategory(), "Category_id", "CategoryName");
+
             return View(subcategory);
         }
 
@@ -58,7 +60,6 @@ namespace StockMANAGEMENT.Controllers
                 sc.UpdateSubcategory(subcategory);
                 return RedirectToAction("Index");
             }
-            ViewBag.Categories = new SelectList(categoryM.ListAllCategory, "Category_id", "Category_name", subcategory.Category_id);
             return View(subcategory);
         }
 

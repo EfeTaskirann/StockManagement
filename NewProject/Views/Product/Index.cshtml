@@ -19,9 +19,6 @@
         <th>Product Image</th>  
         <th>Product Description</th>   
         <th>Product Status</th>
-
-        
-        <th>Details</th>
         <th>Delete</th>
         <th>edit</th>
     </tr>
@@ -35,9 +32,6 @@
             <td>@item.ProductImage</td> 
             <td>@item.ProductDescription</td>  
             <td>@item.ProductStatus</td>
-
-
-            <td><a href="#" class="btn btn-warning">Details</a> </td>
             <td><a href="/Product/Delete/@item.ProductId" class="btn btn-danger">Delete</a> </td>
             <td><a href="/Product/edit/@item.ProductId" class="btn btn-warning">Edit</a> </td>
         </tr>
